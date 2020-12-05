@@ -1,1 +1,72 @@
-<h1>マイページ</h1>
+<%= render "shared/header" %> 
+<%# #ヘッダーの表示 %>
+
+<%# 以下、メイン画面 %>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="main-bar">
+    <%# 顧客（customer）がここから %>
+    <div class="customer">
+      <div class="customer-design">
+        <div class="customer-image">
+          <%= image_tag "customer.png", class:"customer-pict" %>
+        </div>
+        <div class="customer-lavel">
+          <span class="main-lavel">担当顧客情報</span>
+        </div>
+      </div>
+      <div class="customer-info">
+       <ul> 
+        <li>・あ</li>
+        <li>・い</li>
+        <li>・う</li>
+       </ul>
+      </div>
+    </div>
+    <%# 顧客（customer）がここまで %>
+
+    <%# プロジェクト（project）がここから %>
+    <div class="project">
+      <div class="project-design">
+        <div class="project-image">
+          <%= image_tag "project.png", class:"project-pict" %>
+        </div>
+        <div class="project-lavel">
+          <span class="main-lavel">担当プロジェクト情報</span>
+        </div>
+      </div>
+      <div class="project-info">
+       <ul> 
+        <li>・か</li>
+        <li>・き</li>
+        <li>・く</li>
+        <li>・け</li>
+       </ul>
+      </div>
+    </div>
+    <%# プロジェクト（project）がここまで %>
+
+    <%# チーム（team）がここから %>
+    <div class="team">
+      <div class="team-design">
+        <div class="team-image">
+          <%= image_tag "team.png", class:"team-pict" %>
+        </div>
+        <div class="team-lavel">
+          <span class="main-lavel">所属チーム情報管理</span>
+        </div>
+      </div>
+      <div class="team-info">
+       <ul> 
+        <li>・さ</li>
+        <li>・し</li>
+        <li>・す</li>
+       </ul>
+      </div>
+    </div>
+    <%# チーム（team）がここまで %>
+
+  </div>
+</div>

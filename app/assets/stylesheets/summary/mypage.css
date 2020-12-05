@@ -1,0 +1,90 @@
+.main-bar {
+  background-color: #EEEEEE;
+  width: calc(100vw - 300px);
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+
+.main-lavel{
+  font-size: 22px;
+}
+
+/* 顧客情報関連CSSはここから */
+
+.customer {
+  margin-left: 3vw;
+  margin-top: 1vw;
+  background-color: white;
+  width :60vw;
+  height: 40vh;
+}
+
+.customer-design {
+  display: flex;
+  justify-content: left;
+}
+
+.customer-info {
+  margin-top: 10px;
+}
+
+.customer-pict {
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
+  object-position:50% 50%;
+}
+
+
+/* プロジェクト関連CSSはここから */
+
+.project {
+  margin-left: 3vw;
+  margin-top: 1vw;
+  background-color: white;
+  width :60vw;
+  height: 20vh;
+}
+
+.project-design {
+  display: flex;
+  justify-content: left;
+}
+
+.project-info {
+  margin-top: 10px;
+}
+
+.project-pict {
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
+  object-position:50% 50%;
+}
+
+/* team関連CSSはここから */
+
+.team {
+  margin-left: 3vw;
+  margin-top: 1vw;
+  background-color: white;
+  width :60vw;
+  height: 20vh;
+}
+
+.team-design {
+  display: flex;
+  justify-content: left;
+}
+
+.team-info {
+  margin-top: 10px;
+}
+
+.team-pict {
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
+  object-position:50% 50%;
+}
