@@ -5,6 +5,8 @@
 <div class="wrapper">
   <div class="side-bar">
     <%= render "shared/side_bar" %>
+    <div class="favolite">
+    </div>
   </div>
   <div class="main-bar">
     <%# 顧客（customer）がここから %>
@@ -68,5 +70,18 @@
     </div>
     <%# チーム（team）がここまで %>
 
+    <div class='chat-btn'>
+      <span class='chat-btn-text'>チャット</span>
+      <a href= "">
+      <%= image_tag 'chat.png' , size: '185x50' ,class: "chat-btn-icon" %>
+      </a>
+    </div>
+
+    <div class='purchase-btn'>
+      <span class='purchase-btn-text'>追加</span>
+      <a href= "">
+      <%= image_tag 'plus.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
   </div>
 </div>

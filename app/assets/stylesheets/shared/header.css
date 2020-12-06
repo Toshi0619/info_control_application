@@ -4,7 +4,7 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 1vh 10vw;
+  padding: 1vh;
   display: flex;
   flex-direction: column;
   background-color: #008BBB;
@@ -12,44 +12,70 @@
 
 .search-bar-contents {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
+  
 }
 
 .title {
+  color: white;
+  margin-top: 10px;
+  /* top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* position: absolute; */
+  margin: auto;
+}
+
+.title-name {
   color: white;
 }
 
 .home-icon {
   width: 3vw;
   margin-right: 1vw;
-}
-
-.plus-icon {
-  width: 3vw;
-  margin-left: 11vw;
+  margin-left: 3vw;
 }
 
 .acount-icon {
   width: 3vw;
-  margin-left: 3vw;
+  margin-right: 2vw;
+  margin-left: 15vw;
 }
 
-.chat {
-  margin-left: 3vw;
+.username {
+  width: 35px;
+  font-size: 14px;
+  margin-left: 6vw;
+  position: relative;
+}
+
+.usernames {
+  text-align: center;
+  color: white;
+}
+
+.logout-icon {
+  width: 3vw;
+  margin-left: 1vw;
+  margin-right: 3vw;
+}
+
+/* .chat {
+  margin-left: 8vw;
   text-decoration: none;
   border: 1px solid white;
   color: white;
   padding: 10px;
-}
-
+} */
 
 .search-form {
   width: 22vw;
   height: 5vh;
   display: flex;
   margin-bottom: 5px;
-  margin-right: 4vw;
+  /* margin-right: 4vw; */
 }
 
 .search-form>.input-box {
@@ -69,6 +95,7 @@
 .search-icon {
   width: 100%;
 }
+
 
 .nav {
   font-size: 18px;
@@ -108,12 +135,6 @@
   margin-right: 3vw;
   color: #333333;
   font-weight: bold;
-}
-
-
-.logout {
-  text-decoration: none;
-  color: #333333;
 }
 
 .login {
