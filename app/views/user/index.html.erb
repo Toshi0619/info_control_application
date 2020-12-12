@@ -20,10 +20,10 @@
         </div>
       </div>
       <div class="customer-info">
-       <ul> 
-        <li>・あ</li>
-        <li>・い</li>
-        <li>・う</li>
+       <ul>
+         <% current_user.customers.each do |customer| %>
+           <li>  ・ <%= link_to customer.name, customers_path(customer) %>
+         <% end %>
        </ul>
       </div>
     </div>

@@ -15,5 +15,3 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
     end
   end
 end
-
-pry(main)> Customer.create(name: "株式会社Dの意思", address: "埼玉県さいたま市浦和19-9-8", firstdate: "2000-06-01", category_id: "1", employee: "5000", sales: "4000", settlement_id: "10", product: "人事給与", memo: "", takeover:"", user_ids: [1, 2])
