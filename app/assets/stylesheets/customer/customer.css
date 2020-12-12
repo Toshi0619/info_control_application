@@ -1,18 +1,7 @@
-/* サイドバーはここから */
-
-.favolite {
-  background-color: white;
-  width: 200px;
-  height: 50vh;
-  margin-top: 20px;
-  margin-left: 50px
-}
-
-
 
 /* メインバーはここから */
 
-.customer-main-bar {
+.customer-info-bar {
   background-color: #EEEEEE;
   width: 100vw;
   flex-direction: column;
@@ -26,11 +15,11 @@
 
 /* 顧客情報関連CSSはここから */
 
-.customer {
+.customer-basic {
   margin-left: 3vw;
   margin-top: 1vw;
   background-color: white;
-  width :60vw;
+  width :85vw;
   height: 40vh;
 }
 
