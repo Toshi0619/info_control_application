@@ -13,11 +13,11 @@
       </div>
       <div class="customer-info">
        <ul> 
-        <li>会社名  初受注日</li>
-        <li>住所</li>
-        <li>業種  従業員数</li>
-        <li>売上  決算時期</li>
-        <li>利用製品</li>
+        <li class="customer-name"><div class="customer-parent"><div class="customer-left">【会社名】　 <%= @customer.name %></div>  <div class="customer-right">【初受注日】  <%= @customer.firstdate %></div></div></li>
+        <br><li class="customer-name"><span class="customer-address">【住所】   　　<%= @customer.address %></span></li>
+        <br><li class="customer-name"><div class="customer-parent"><div class="customer-left">【業種】　　 <%= @customer.category.name %></div> <div class="customer-right">【従業員数】  <%= @customer.employee %>名</div></li>
+        <br><li class="customer-name"><div class="customer-parent"><div class="customer-left">【売上】　　 <%= @customer.sales %>億円</div><div class="customer-right">【決算時期】    <%= @customer.settlement.name %></div></li>
+        <br><li class="customer-name"><span class="customer-product">【利用製品】 <%= @customer.product %></li>
        </ul>
       </div>
     </div>
@@ -108,6 +108,13 @@
       </div>
     </div>
     <%# 受注歴がここまで %>
+
+    <div class='customer-btn'>
+      <span class='customer-btn-text'>顧客登録</span>
+      <a href= "/customers/new">
+      <%= image_tag 'customer_register.png' , size: '185x50' ,class: "customer-btn-icon" %>
+      </a>
+    </div>
 
     <div class='chat-btn'>
       <span class='chat-btn-text'>チャット</span>

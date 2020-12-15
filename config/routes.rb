@@ -3,8 +3,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root 'user#index'
-  resources :customers do
-    resources :users
-  end
+  resources :users
+  resources :customers
+  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

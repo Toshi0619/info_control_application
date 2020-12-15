@@ -1,6 +1,9 @@
+<header class='login-header'>
+  <h1 class="header-login-title">info-management</h1>
+</header>
+
 <div class="box">
   <div class="box-inner">
-    <h1>info-management</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="box-email">
         <%# <%= f.label :email, "Eメール" %><br />
@@ -41,3 +44,4 @@
     </div>
   </div>
 </div>
+

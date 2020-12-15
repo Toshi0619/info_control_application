@@ -19,8 +19,8 @@
   margin-left: 3vw;
   margin-top: 1vw;
   background-color: white;
-  width :85vw;
-  height: 40vh;
+  width :80vw;
+  height: 280px;
 }
 
 .customer-design {
@@ -141,4 +141,54 @@
 
 .chat-btn-icon {
   width: 60%;
+}
+
+
+/* 顧客登録ボタン */
+
+.customer-btn {
+  width: 120px;
+  background: #FF6347	;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 328px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.customer-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 22px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.customer-btn-icon {
+  width: 60%;
+}
+
+
+/* 詳細画面はこちらから */
+
+.customer-name {
+  margin-left: 40px;
+}
+
+.customer-left {
+  width: 500px;
+}
+
+.customer-right {
+  margin-left: 30px;
+}
+
+.customer-address {
+
+}
+
+.customer-parent {
+  display: flex;
+  justify-content: left;
 }

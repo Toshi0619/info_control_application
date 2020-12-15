@@ -22,7 +22,7 @@
       <div class="customer-info">
        <ul>
          <% current_user.customers.each do |customer| %>
-           <li>  ・ <%= link_to customer.name, customers_path(customer) %>
+           <li>  ・ <%= link_to customer.name, customer_path(customer.id) %>
          <% end %>
        </ul>
       </div>
