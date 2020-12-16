@@ -70,6 +70,7 @@
     </div>
     <%# チーム（team）がここまで %>
 
+    <%# ボタンはここから %>
     <div class='chat-btn'>
       <span class='chat-btn-text'>チャット</span>
       <a href= "">
@@ -79,9 +80,11 @@
 
     <div class='purchase-btn'>
       <span class='purchase-btn-text'>追加</span>
-      <a href= "">
-      <%= image_tag 'plus.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-      </a>
+      <div>
+        <a href= "">
+          <%= image_tag 'plus.png' , size: '185x50' ,class: "purchase-btn-icon", id: 'index-plus'%>
+        </a>
+     </div> 
     </div>
   </div>
 </div>
