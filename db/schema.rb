@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_101127) do
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "address", default: "", null: false
-    t.date "firstdate"
+    t.date "firstdate", null: false
     t.integer "category_id"
     t.integer "employee"
     t.integer "sales"

@@ -3,7 +3,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
     create_table :customers do |t|
       t.string :name, null: false, default: ""
       t.string :address, null: false, default: ""
-      t.date :firstdate, nukk: false
+      t.date :firstdate, null: false
       t.integer :category_id
       t.integer :employee
       t.integer :sales
