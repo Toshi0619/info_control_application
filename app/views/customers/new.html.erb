@@ -63,13 +63,13 @@
         <div class="weight-bold-text">
           従業員数
         </div>
-        <%= f.text_area :employee, class:"items-text", id:"item-info", placeholder:"従業員数" , rows:"2", maxlength:"100" %>
+        <%= f.text_area :employee, class:"items-text", id:"item-info", placeholder:"従業員数【名】（数字のみ）" , rows:"2", maxlength:"100" %>
       </div>
        <div class="items-explain">
         <div class="weight-bold-text">
           売り上げ
         </div>
-        <%= f.text_area :sales, class:"items-text", id:"item-info", placeholder:"売り上げ" , rows:"2", maxlength:"100" %>
+        <%= f.text_area :sales, class:"items-text", id:"item-info", placeholder:"売り上げ【億円】（数字で億単位のみ）" , rows:"2", maxlength:"100" %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
@@ -109,6 +109,10 @@
     </div>
     <br><br>
     <%# 担当登録部分はここまで %>
+
+    <%# 自分を担当登録部分はここから %>
+    <input name="customer[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    <%# 自分を担当登録部分はここまで %>
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
