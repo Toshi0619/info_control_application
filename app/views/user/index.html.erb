@@ -26,6 +26,9 @@
          <% end %>
        </ul>
       </div>
+      <div class="customer-list">
+       <%= link_to "顧客一覧へ", customers_path %>
+      </div>
     </div>
     <%# 顧客（customer）がここまで %>
 
@@ -78,7 +81,7 @@
       </a>
     </div>
 
-    <div class='purchase-btn'>
+    <div class='purchase-btn', id='addadd'>
       <span class='purchase-btn-text'>追加</span>
       <div>
         <a href= "">
