@@ -24,16 +24,29 @@
     <%# 顧客の基本情報がここまで %>
 
     <%# 先方関係者がここから %>
-    <div class="project">
-      <div class="project-design">
-        <div class="project-lavel">
+    <div class="customer-basic">
+      <div class="customer-design">
+        <div class="customer-lavel">
           <span class="main-lavel">　先方関係者</span>
         </div>
       </div>
-      <div class="project-info">
+      <div class="partner-list">
        <ul>
+          <li>
+             <div class="partner">
+               <div class="partner-name">  　 関係者名前</div> 
+               <div class="partner-role"> 　  役職</div>
+               <div class="partner-dicision"> 　  決裁権（有無）</div>
+             </div>
+           </li>
          <% @partners.each do |partner| %>
-           <li>  ・ <%= link_to partner.firstname+partner.lastname, "" %>
+           <li>
+             <div class="partner">
+               <div class="partner-name">  ・ <%= link_to partner.firstname+partner.lastname, ""%></div> 
+               <div class="partner-role"> 　  <%= link_to partner.role, ""%></div>
+               <div class="partner-dicision"> 　  <%= link_to partner.decision.name, ""%></div>
+             </div>
+           </li>
          <% end %>
        </ul>
       </div>

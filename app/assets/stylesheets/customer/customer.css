@@ -39,6 +39,29 @@
   object-position:50% 50%;
 }
 
+/* プロジェクト関連CSSはここから */
+
+.partner {
+  display: flex;
+  justify-content: left;
+  margin-left: 3vw;
+  font-size: 18px;
+}
+
+.partner-name {
+  width: 350px;
+}
+
+.partner-role {
+  margin-left: 50px;
+  width: 250px;
+}
+
+.partner-decision {
+  margin-left: 50px;
+  width: 200px;
+}
+
 
 /* プロジェクト関連CSSはここから */
 

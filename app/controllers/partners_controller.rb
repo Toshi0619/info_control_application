@@ -16,6 +16,6 @@ class PartnersController < ApplicationController
 
   private
   def partner_params
-    params.require(:partner).permit(:firstname, :lastname, :role, :email, :phonenumber, :right_decision_id, :hobby, :stance, :personality, :habit).merge(customer_id: params[:customer_id])
+    params.require(:partner).permit(:firstname, :lastname, :role, :email, :phonenumber, :decision_id, :hobby, :stance, :personality, :habit).merge(customer_id: params[:customer_id])
   end
 end

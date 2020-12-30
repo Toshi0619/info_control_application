@@ -50,7 +50,7 @@
         <div class="weight-bold-text">
           決算権
         </div>
-        <%= f.collection_select(:right_decision_id, Decision.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:decision_id, Decision.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
     

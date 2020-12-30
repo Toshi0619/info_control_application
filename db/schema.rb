@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_083923) do
     t.string "role", default: ""
     t.string "email", default: ""
     t.string "phonenumber", default: ""
-    t.integer "right_decision_id"
+    t.integer "decision_id"
     t.string "hobby"
     t.string "stance"
     t.string "personality"
