@@ -1,6 +1,7 @@
 class CreatePartners < ActiveRecord::Migration[6.0]
   def change
     create_table :partners do |t|
+      t.integer :customer_id
       t.string :firstname, null: false, default: ""
       t.string :lastname, null: false, default: ""
       t.string :role, default: ""

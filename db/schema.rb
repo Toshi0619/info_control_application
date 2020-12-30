@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_083923) do
   end
 
   create_table "partners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "customer_id"
     t.string "firstname", default: "", null: false
     t.string "lastname", default: "", null: false
     t.string "role", default: ""

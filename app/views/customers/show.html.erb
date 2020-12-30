@@ -31,11 +31,10 @@
         </div>
       </div>
       <div class="project-info">
-       <ul> 
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+       <ul>
+         <% @partners.each do |partner| %>
+           <li>  ・ <%= link_to partner.firstname+partner.lastname, "" %>
+         <% end %>
        </ul>
       </div>
     </div>
