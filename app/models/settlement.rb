@@ -16,4 +16,5 @@ class Settlement < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :customers
+  has_many :gcustomers
 end

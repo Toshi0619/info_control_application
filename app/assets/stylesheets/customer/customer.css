@@ -21,6 +21,7 @@
   background-color: white;
   width :80vw;
   height: 280px;
+  position: relative;
 }
 
 .customer-design {
@@ -39,7 +40,7 @@
   object-position:50% 50%;
 }
 
-/* プロジェクト関連CSSはここから */
+/* Partner関連CSSはここから */
 
 .partner {
   display: flex;
@@ -60,6 +61,43 @@
 .partner-decision {
   margin-left: 50px;
   width: 200px;
+}
+
+.partner-space {
+  height: 6px;
+}
+
+
+/* Gcustomer関連CSSはここから */
+
+.gcustomer {
+  display: flex;
+  justify-content: left;
+  margin-left: 3vw;
+  font-size: 18px;
+}
+
+.gcustomer-name {
+  width: 350px;
+}
+
+.gcustomer-category {
+  margin-left: 50px;
+  width: 150px;
+}
+
+.gcustomer-employee {
+  margin-left: 50px;
+  width: 100px;
+}
+
+.gcustomer-sales {
+  margin-left: 50px;
+  width: 100px;
+}
+
+.partner-space {
+  height: 6px;
 }
 
 

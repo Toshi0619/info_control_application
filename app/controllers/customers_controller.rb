@@ -20,6 +20,7 @@ class CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @partners = Partner.where(customer_id: params[:id])
+    @gcustomers = Gcustomer.where(customer_id: params[:id])
   end
 
   def edit

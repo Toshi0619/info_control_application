@@ -4,13 +4,13 @@
   
   <div class="items-sell-main">
   　
-    <h2 class="items-sell-title">【顧客登録】お客様の情報を入力ください</h2>
-    <%= form_with model: @customer, url:customers_path, local: true do |f| %>
+    <h2 class="items-sell-title">【グループ企業登録】グループ会社の情報を入力ください</h2>
+    <%= form_with model: @gcustomer, url:customer_gcustomers_path, local: true do |f| %>
 
     <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
-        お客様名
+        グループ会社様名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"会社名（必須 100文字まで)", maxlength:"100" %>
@@ -55,10 +55,6 @@
 
     <%# 商品名と商品説明 %>
     <div class="new-items">
-      <div class="weight-bold-text">
-        プロダクト
-      </div>
-      <%= f.text_area :product, class:"items-text", id:"item-name", placeholder:"利用プロダクト（100文字まで)", rows:"2", maxlength:"100" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           従業員数
@@ -84,35 +80,6 @@
       </div>
     </div>
     <%# /配送について %>
-
-    <%# 販売価格 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        引継事項
-      </div>
-      <%= f.text_area :takeover, class:"items-text", id:"item-name", placeholder:"引継ぎ事項（1000文字まで)",rows:"7"  ,maxlength:"1000" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          特記事項
-        </div>
-        <%= f.text_area :memo, class:"items-text", id:"item-info", placeholder:"特記事項（1000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-    </div>
-    <%# /販売価格 %>
-
-    <%# 担当登録部分 javascriptを使いチェックボックスの挙動で要素を作るか消すかを実装する　%>
-    <div class="items-explain">
-        <div class="weight-bold-text">
-          自分を担当に追加しますか？
-        </div>
-        <%= check_box :customer, :user_ids, {class: "check_box"}, true, false %>
-    </div>
-    <br><br>
-    <%# 担当登録部分はここまで %>
-
-    <%# 自分を担当登録部分はここから %>
-    <input name="customer[user_ids][]" type="hidden" value=<%= current_user.id %>>
-    <%# 自分を担当登録部分はここまで %>
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
