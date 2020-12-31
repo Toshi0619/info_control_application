@@ -46,9 +46,9 @@
          <% @partners.each do |partner| %>
            <li>
              <div class="partner">
-               <div class="partner-name">  ・ <%= link_to partner.firstname+partner.lastname,  "/partners/#{partner.id}/edit"%></div> 
-               <div class="partner-role"> 　  <%= link_to partner.role, "/partners/#{partner.id}"%></div>
-               <div class="partner-dicision"> 　  <%= link_to partner.decision.name, "/partners/#{partner.id}"%></div>
+               <div class="partner-name">  ・ <%= link_to partner.firstname+partner.lastname,  "/customers/#{:id}/partners/#{partner.id}/edit"%></div> 
+               <div class="partner-role"> 　  <%= link_to partner.role, "/customers/#{:id}/partners/#{partner.id}"%></div>
+               <div class="partner-dicision"> 　  <%= link_to partner.decision.name, "/customers/#{:id}/partners/#{partner.id}"%></div>
              </div>
              <div class="partner-space">
            </li>
