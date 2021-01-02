@@ -20,11 +20,14 @@
         </div>
       </div>
       <div class="customer-info">
-       <ul> 
-        <li>・あ</li>
-        <li>・い</li>
-        <li>・う</li>
+       <ul>
+         <% current_user.customers.each do |customer| %>
+           <li>  ・ <%= link_to customer.name, customer_path(customer.id) %>
+         <% end %>
        </ul>
+      </div>
+      <div class="customer-list">
+       <%= link_to "顧客一覧へ", customers_path %>
       </div>
     </div>
     <%# 顧客（customer）がここまで %>
@@ -42,7 +45,7 @@
       <div class="project-info">
        <ul> 
         <li>・か</li>
-        <li>・き</li>う
+        <li>・き</li>
         <li>・く</li>
         <li>・け</li>
        </ul>
@@ -70,6 +73,7 @@
     </div>
     <%# チーム（team）がここまで %>
 
+    <%# ボタンはここから %>
     <div class='chat-btn'>
       <span class='chat-btn-text'>チャット</span>
       <a href= "">
@@ -77,11 +81,13 @@
       </a>
     </div>
 
-    <div class='purchase-btn'>
+    <div class='purchase-btn', id='addadd'>
       <span class='purchase-btn-text'>追加</span>
-      <a href= "">
-      <%= image_tag 'plus.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-      </a>
+      <div>
+        <a href= "">
+          <%= image_tag 'plus.png' , size: '185x50' ,class: "purchase-btn-icon", id: 'index-plus'%>
+        </a>
+     </div> 
     </div>
   </div>
 </div>

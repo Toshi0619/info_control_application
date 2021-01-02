@@ -1,0 +1,180 @@
+<%= render "shared/header" %> 
+<%# #ヘッダーの表示 %>
+
+<%# 以下、メイン画面 %>
+<div class="wrapper">
+  <div class="customer-info-bar">
+    <%# 顧客の基本情報がここから %>
+    <div class="customer-basic">
+      <div class="customer-design">
+        <div class="customer-lavel">
+          <span class="main-lavel">　Basic information</span>
+        </div>
+      </div>
+      <div class="customer-info">
+       <ul> 
+        <li class="customer-name"><div class="customer-parent"><div class="customer-left">【会社名】　 <%= @customer.name %></div>  <div class="customer-right">【初受注日】  <%= @customer.firstdate %></div></div></li>
+        <br><li class="customer-name"><span class="customer-address">【住所】   　　<%= @customer.address %></span></li>
+        <br><li class="customer-name"><div class="customer-parent"><div class="customer-left">【業種】　　 <%= @customer.category.name %></div> <div class="customer-right">【従業員数】  <%= @customer.employee %>名</div></li>
+        <br><li class="customer-name"><div class="customer-parent"><div class="customer-left">【売上】　　 <%= @customer.sales %>億円</div><div class="customer-right">【決算時期】    <%= @customer.settlement.name %></div></li>
+        <br><li class="customer-name"><span class="customer-product">【利用製品】 <%= @customer.product %></li>
+       </ul>
+      </div>
+      <div class="customer-list">
+       <%= link_to "顧客情報編集画面へ", edit_customer_path %>
+      </div>
+    </div>
+    <%# 顧客の基本情報がここまで %>
+
+    <%# 先方関係者がここから %>
+    <div class="customer-basic">
+      <div class="customer-design">
+        <div class="customer-lavel">
+          <span class="main-lavel">　先方関係者</span>
+        </div>
+      </div>
+      <div class="partner-list">
+       <ul>
+          <li>
+             <div class="partner">
+               <div class="partner-name">  　 関係者名前</div> 
+               <div class="partner-role"> 　  役職</div>
+               <div class="partner-dicision"> 　  決裁権（有無）</div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% @partners.each do |partner| %>
+           <li>
+             <div class="partner">
+               <div class="partner-name">  ・ <%= link_to partner.firstname+partner.lastname,  "/customers/#{partner.customer_id}/partners/#{partner.id}/edit"%></div> 
+               <div class="partner-role"> 　  <%= link_to partner.role, "/customers/#{partner.customer_id}/partners/#{partner.id}/edit"%></div>
+               <div class="partner-dicision"> 　  <%= link_to partner.decision.name, "/customers/#{partner.customer_id}/partners/#{partner.id}/edit"%></div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% end %>
+       </ul>
+      </div>
+    </div>
+    <%# 先方関係者がここまで %>
+
+    <%# グループ会社がここから %>
+    <div class="customer-basic">
+      <div class="customer-design">
+        <div class="customer-lavel">
+          <span class="main-lavel">　グループ会社一覧</span>
+        </div>
+      </div>
+      <div class="gcustomer-list">
+       <ul>
+          <li>
+             <div class="gcustomer">
+               <div class="gcustomer-name">  　 会社名</div> 
+               <div class="gcustomer-category"> 　  業種</div>
+               <div class="gcustomer-employee"> 　  従業員数</div>
+               <div class="gcustomer-sales"> 　  売り上げ</div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% @gcustomers.each do |gcustomer| %>
+           <li>
+             <div class="gcustomer">
+               <div class="gcustomer-name">  ・ <%= link_to gcustomer.name, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%></div> 
+               <div class="gcustomer-category"> 　  <%= link_to gcustomer.category.name, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%></div>
+               <div class="gcustomer-employee"> 　  <%= link_to gcustomer.employee, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%>人</div>
+               <div class="gcustomer-sales"> 　  <%= link_to gcustomer.sales, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%>億円</div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% end %>
+       </ul>
+      </div>
+    </div>
+    <%# グループ会社がここまで %>
+
+    <%# トラブル＆クレームがここから %>
+    <div class="customer-basic">
+      <div class="customer-design">
+        <div class="customer-lavel">
+          <span class="main-lavel">　トラブル/クレーム一覧</span>
+        </div>
+      </div>
+      <div class="trouble-list">
+       <ul>
+          <li>
+             <div class="trouble">
+               <div class="trouble-sdate">  　 事象発生日</div> 
+               <div class="trouble-title"> 　  案件タイトル</div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% @troubles.each do |trouble| %>
+           <li>
+             <div class="gcustomer">
+               <div class="trouble-sdate">  ・ <%= link_to trouble.sdate, "/customers/#{trouble.customer_id}/troubles/#{trouble.id}/edit"%></div> 
+               <div class="trouble-title"> 　  <%= link_to trouble.title, "/customers/#{trouble.customer_id}/troubles/#{trouble.id}/edit"%></div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% end %>
+       </ul>
+      </div>
+    </div>
+    <%# トラブル＆クレームがここまで %>
+
+    <%# 受注歴がここから %>
+    <div class="team">
+      <div class="team-design">
+        <div class="team-lavel">
+          <span class="main-lavel">　受注歴</span>
+        </div>
+      </div>
+      <div class="team-info">
+       <ul> 
+        <li></li>
+        <li></li>
+        <li></li>
+       </ul>
+      </div>
+    </div>
+    <%# 受注歴がここまで %>
+
+    <%# 突起事項・引継事項がここから %>
+    <div class="team">
+      <div class="team-design">
+        <div class="team-lavel">
+          <span class="main-lavel">　突起事項・引継事項</span>
+        </div>
+      </div>
+      <div class="team-info">
+       <ul> 
+        <li></li>
+        <li></li>
+        <li></li>
+       </ul>
+      </div>
+    </div>
+    <%# 受注歴がここまで %>
+
+    <div class='customer-btn'>
+      <span class='customer-btn-text'>顧客登録</span>
+      <a href= "/customers/new">
+      <%= image_tag 'customer_register.png' , size: '185x50' ,class: "customer-btn-icon" %>
+      </a>
+    </div>
+
+    <div class='chat-btn'>
+      <span class='chat-btn-text'>チャット</span>
+      <a href= "">
+      <%= image_tag 'chat.png' , size: '185x50' ,class: "chat-btn-icon" %>
+      </a>
+    </div>
+
+    <div class='purchase-btn'>
+      <span class='purchase-btn-text'>追加</span>
+      <a href= "">
+      <%= image_tag 'plus.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
+  </div>
+</div>

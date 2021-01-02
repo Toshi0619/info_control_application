@@ -1,0 +1,95 @@
+<%= render "shared/header" %> 
+
+<div class="items-sell-contents">
+  
+  <div class="items-sell-main">
+  　
+    <h2 class="items-sell-title">【顧客登録】先方関係者様を入力ください</h2>
+    <%= form_with model: @partner, url:customer_partners_path, local: true do |f| %>
+
+    <%# 関係者名登録 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        関係者名【姓】
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :firstname, class:"items-text", id:"item-name", placeholder:"関係者名【姓】（必須 100文字まで)", maxlength:"100" %>
+      <br><br>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          関係者名【名】
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :lastname, class:"items-text", id:"item-info", placeholder:"関係者名【名】（必須 100文字まで）" ,maxlength:"100" %>
+      </div>
+    </div>
+    <%# /関係者名登録はここまで %>
+
+    <%# 詳細 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        役職
+      </div>
+      <%= f.text_area :role, class:"items-text", id:"item-name", placeholder:"役職（100文字まで)", rows:"2", maxlength:"100" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+        メールアドレス
+        </div>
+        <%= f.text_area :email, class:"items-text", id:"item-info", placeholder:"email（@を含む）" , rows:"2", maxlength:"100" %>
+      </div>
+       <div class="items-explain">
+        <div class="weight-bold-text">
+          電話番号
+        </div>
+        <%= f.text_area :phonenumnber, class:"items-text", id:"item-info", placeholder:"電話番号（ハイフン無し）" , rows:"2", maxlength:"100" %>
+      </div>
+    </div>
+
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          決算権
+        </div>
+        <%= f.collection_select(:decision_id, Decision.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+      </div>
+    </div>
+    
+    
+    <div class="new-items">
+      <div class="weight-bold-text">
+        趣味・趣向
+      </div>
+      <%= f.text_area :hobby, class:"items-text", id:"item-name", placeholder:"趣味・趣向（100文字まで)" ,maxlength:"100" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+        仕事のスタンス
+        </div>
+        <%= f.text_area :stance, class:"items-text", id:"item-info", placeholder:"仕事のスタンス（100文字まで）" ,maxlength:"100" %>
+      </div>
+    </div>
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        人格
+      </div>
+      <%= f.text_area :personality, class:"items-text", id:"item-name", placeholder:"人格（100文字まで)" ,maxlength:"100" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+        口癖
+        </div>
+        <%= f.text_area :hobit, class:"items-text", id:"item-info", placeholder:"口癖（100文字まで）" ,maxlength:"100" %>
+      </div>
+    </div>
+    
+    <%# 詳細はここまで %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'トップにもどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+</div>

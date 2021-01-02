@@ -20,13 +20,17 @@
   padding: 20px 26px;
 }
 
+.header-login-title {
+  color: white;
+  padding-top: 2vh;
+}
+
 h1 {
   font-weight: 400;
   font-size: 32px;
   line-height: 1.2;
   margin-bottom: 10px;
   padding-bottom: 4px;
-  color: #5D99FF;
   text-align: center;
 }
 

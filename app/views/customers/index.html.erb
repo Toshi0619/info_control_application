@@ -1,0 +1,60 @@
+<%= render "shared/header" %> 
+
+<div class="wrapper">
+  <div class="customers-main-bar">
+    <%# 顧客（customer）がここから %>
+    <div class="customers-1">
+      <div class="customer-design">
+        <div class="customer-image">
+          <%= image_tag "customer.png", class:"customer-pict" %>
+        </div>
+        <div class="customer-lavel">
+          <span class="main-lavel">担当企業一覧</span>
+        </div>
+      </div>
+      <div class="customer-info">
+       <ul>
+         <% current_user.customers.each do |customer| %>
+           <li>  ・ <%= link_to customer.name, customer_path(customer.id) %>
+         <% end %>
+       </ul>
+      </div>
+    </div>
+
+    <div class="customers-wall">
+    </div>
+
+    <div class="customers-2">
+      <div class="customer-design">
+        <div class="customer-image">
+          <%= image_tag "customer.png", class:"customer-pict" %>
+        </div>
+        <div class="customer-lavel">
+          <span class="main-lavel">企業検索</span>
+        </div>
+      </div>
+      <div class="customer-info">
+       <ul>
+         <% @customers.each do |customer| %>
+           <li>  ・ <%= link_to customer.name, customer_path(customer.id) %>
+         <% end %>
+       </ul>
+      </div>
+    </div>
+
+    <div class='customers-btn'>
+      <span class='customer-btn-text'>顧客登録</span>
+      <a href= "/customers/new">
+      <%= image_tag 'customer_register.png' , size: '185x50' ,class: "customer-btn-icon" %>
+      </a>
+    </div>
+
+    <div class='chats-btn'>
+      <span class='chat-btn-text'>チャット</span>
+      <a href= "">
+      <%= image_tag 'chat.png' , size: '185x50' ,class: "chat-btn-icon" %>
+      </a>
+    </div>
+
+  </div>
+</div>

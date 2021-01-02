@@ -1,0 +1,93 @@
+<%= render "shared/header" %> 
+
+<div class="items-sell-contents">
+  
+  <div class="items-sell-main">
+  　
+    <h2 class="items-sell-title">【グループ企業編集】グループ会社の情報を入力ください</h2>
+    <%= form_with model: @gcustomer, url:customer_gcustomer_path, local: true do |f| %>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        グループ会社様名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"会社名（必須 100文字まで)", maxlength:"100" %>
+      <br><br>
+      <div class='form-text-wrap'>
+      <label class="form-text">初受注日</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :firstdate,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1980,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          お客様住所
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :address, class:"items-text", id:"item-info", placeholder:"会社住所（必須 200文字まで）" ,rows:"3" ,maxlength:"200" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 商品の詳細 %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          業種
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    <%# /商品の詳細 %>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          従業員数
+        </div>
+        <%= f.text_area :employee, class:"items-text", id:"item-info", placeholder:"従業員数【名】（数字のみ）" , rows:"2", maxlength:"100" %>
+      </div>
+       <div class="items-explain">
+        <div class="weight-bold-text">
+          売り上げ
+        </div>
+        <%= f.text_area :sales, class:"items-text", id:"item-info", placeholder:"売り上げ【億円】（数字で億単位のみ）" , rows:"2", maxlength:"100" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 配送について %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          決算時期
+        </div>
+        <%= f.collection_select(:settlement_id, Settlement.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+      </div>
+    </div>
+    <%# /配送について %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'トップにもどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+</div>
