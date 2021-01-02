@@ -14,6 +14,19 @@ class TroublesController < ApplicationController
     end
   end
 
+  def edit
+    @trouble = Trouble.find(params[:id])
+  end
+
+  def update
+    @trouble = Trouble.find(params[:id])
+    if @trouble.update(trouble_params)
+      redirect_to customer_path(@trouble.customer_id)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def trouble_params

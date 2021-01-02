@@ -79,10 +79,10 @@
          <% @gcustomers.each do |gcustomer| %>
            <li>
              <div class="gcustomer">
-               <div class="gcustomer-name">  ・ <%= link_to gcustomer.name, ""%></div> 
-               <div class="gcustomer-category"> 　  <%= link_to gcustomer.category.name, ""%></div>
-               <div class="gcustomer-employee"> 　  <%= link_to gcustomer.employee, ""%>人</div>
-               <div class="gcustomer-sales"> 　  <%= link_to gcustomer.sales, ""%>億円</div>
+               <div class="gcustomer-name">  ・ <%= link_to gcustomer.name, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%></div> 
+               <div class="gcustomer-category"> 　  <%= link_to gcustomer.category.name, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%></div>
+               <div class="gcustomer-employee"> 　  <%= link_to gcustomer.employee, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%>人</div>
+               <div class="gcustomer-sales"> 　  <%= link_to gcustomer.sales, "/customers/#{gcustomer.customer_id}/gcustomers/#{gcustomer.id}/edit"%>億円</div>
              </div>
              <div class="partner-space">
            </li>
@@ -111,8 +111,8 @@
          <% @troubles.each do |trouble| %>
            <li>
              <div class="gcustomer">
-               <div class="trouble-sdate">  ・ <%= link_to trouble.sdate, ""%></div> 
-               <div class="trouble-title"> 　  <%= link_to trouble.title, ""%></div>
+               <div class="trouble-sdate">  ・ <%= link_to trouble.sdate, "/customers/#{trouble.customer_id}/troubles/#{trouble.id}/edit"%></div> 
+               <div class="trouble-title"> 　  <%= link_to trouble.title, "/customers/#{trouble.customer_id}/troubles/#{trouble.id}/edit"%></div>
              </div>
              <div class="partner-space">
            </li>
