@@ -21,9 +21,20 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     @partners = Partner.where(customer_id: params[:id])
     @gcustomers = Gcustomer.where(customer_id: params[:id])
+    @troubles = Trouble.where(customer_id: params[:id])
   end
 
   def edit
+    @customer = Customer.find(params[:id])
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      redirect_to customer_path(@customer.id)
+    else
+      render :edit
+    end
   end
 
   private

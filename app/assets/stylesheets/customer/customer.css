@@ -101,6 +101,26 @@
 }
 
 
+/* Gcustomer関連CSSはここから */
+
+.trouble {
+  display: flex;
+  justify-content: left;
+  margin-left: 3vw;
+  font-size: 18px;
+}
+
+.trouble-name {
+  width: 200px;
+}
+
+.trouble-title {
+  margin-left: 50px;
+  width: 350px;
+}
+
+
+
 /* プロジェクト関連CSSはここから */
 
 .project {

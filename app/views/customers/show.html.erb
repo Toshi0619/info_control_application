@@ -46,9 +46,9 @@
          <% @partners.each do |partner| %>
            <li>
              <div class="partner">
-               <div class="partner-name">  ・ <%= link_to partner.firstname+partner.lastname,  "/customers/#{:id}/partners/#{partner.id}/edit"%></div> 
-               <div class="partner-role"> 　  <%= link_to partner.role, "/customers/#{:id}/partners/#{partner.id}"%></div>
-               <div class="partner-dicision"> 　  <%= link_to partner.decision.name, "/customers/#{:id}/partners/#{partner.id}"%></div>
+               <div class="partner-name">  ・ <%= link_to partner.firstname+partner.lastname,  "/customers/#{partner.customer_id}/partners/#{partner.id}/edit"%></div> 
+               <div class="partner-role"> 　  <%= link_to partner.role, "/customers/#{partner.customer_id}/partners/#{partner.id}/edit"%></div>
+               <div class="partner-dicision"> 　  <%= link_to partner.decision.name, "/customers/#{partner.customer_id}/partners/#{partner.id}/edit"%></div>
              </div>
              <div class="partner-space">
            </li>
@@ -93,17 +93,30 @@
     <%# グループ会社がここまで %>
 
     <%# トラブル＆クレームがここから %>
-    <div class="team">
-      <div class="team-design">
-        <div class="team-lavel">
+    <div class="customer-basic">
+      <div class="customer-design">
+        <div class="customer-lavel">
           <span class="main-lavel">　トラブル/クレーム一覧</span>
         </div>
       </div>
-      <div class="team-info">
-       <ul> 
-        <li></li>
-        <li></li>
-        <li></li>
+      <div class="trouble-list">
+       <ul>
+          <li>
+             <div class="trouble">
+               <div class="trouble-sdate">  　 事象発生日</div> 
+               <div class="trouble-title"> 　  案件タイトル</div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% @troubles.each do |trouble| %>
+           <li>
+             <div class="gcustomer">
+               <div class="trouble-sdate">  ・ <%= link_to trouble.sdate, ""%></div> 
+               <div class="trouble-title"> 　  <%= link_to trouble.title, ""%></div>
+             </div>
+             <div class="partner-space">
+           </li>
+         <% end %>
        </ul>
       </div>
     </div>

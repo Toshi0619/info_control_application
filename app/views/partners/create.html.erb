@@ -1,1 +1,9 @@
 <%= render "shared/header" %> 
+
+<div class="contents row">
+  <div class="success">
+    <h2>登録が完了しました。</h2>
+    <%= link_to "ホームに戻る", root_path %>
+    <%= link_to "顧客画面に戻る", "/customers/#{:id}" %>
+  </div>
+</div>
